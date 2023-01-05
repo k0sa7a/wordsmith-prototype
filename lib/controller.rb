@@ -27,6 +27,25 @@ class Controller
     end
   end
 
+  def change
+    if @shuffles < 2
+
+      @view.show_new_letters(@word.word_arr)
+    else
+      @view.show_no_more_shuffles
+    end
+  end
+
+  def replace_all
+    if @shuffles < 2
+      @word = Word.new
+      @shuffles += 1
+      @view.show_new_letters(@word.word_arr)
+    else
+      @view.show_no_more_shuffles
+    end
+  end
+
   private
 
   def check_english_word(word)

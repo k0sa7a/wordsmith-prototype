@@ -19,4 +19,12 @@ class View
     puts "Sorry! The word '#{word.upcase}' cannot be written with the letters: #{letters_arr}."
     puts "YOUR SCORE IS: 0"
   end
+
+  def show_new_letters(word_arr)
+    puts "Your new letters are: #{word_arr.join(", ")}"
+  end
+
+  def show_no_more_shuffles
+    puts "Sorry, you have already changed your letters twice!"
+  end
 end

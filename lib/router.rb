@@ -8,13 +8,15 @@ class Router
     display_rules
     puts "Your letters are: #{@controller.word.word_arr.join(", ")}"
 
-    display_options
-    action = gets.chomp.to_i
-    route_actions(action)
+    while @controller.shuffles < 3 && @running
+      display_options
+      action = gets.chomp.to_i
+      route_actions(action)
+    end
   end
 
   def display_options
-    puts "Please choose one of the following options:"
+    puts "Please choose one of the following:"
     puts "1: Submit your WORD try"
     if @controller.shuffles < 2
       puts "2: Give all LETTERS you want to keep and replace remaining ones"
@@ -50,7 +52,9 @@ class Router
 
   def route_actions(action)
     case action
-    when 1 then @controller.submit
+    when 1
+      @controller.submit
+      @running = false
     when 2 then @controller.change
     when 3 then @controller.replace_all
     end
