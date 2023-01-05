@@ -29,7 +29,17 @@ class Controller
 
   def change
     if @shuffles < 2
-
+      letters_to_keep = ""
+      possible = false
+      while possible == false
+        letters_to_keep = @view.ask_letters_to_keep.upcase
+        possible = check_possible_word(letters_to_keep)
+      end
+      @shuffles += 1
+      @word.word_arr = letters_to_keep.chars
+      number = 9 - letters_to_keep.size
+      new_arr = number.times {@word.word_arr << ('A'..'Z').to_a.sample}
+      @word.word_arr << new_arr
       @view.show_new_letters(@word.word_arr)
     else
       @view.show_no_more_shuffles

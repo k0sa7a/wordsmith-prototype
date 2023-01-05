@@ -27,4 +27,10 @@ class View
   def show_no_more_shuffles
     puts "Sorry, you have already changed your letters twice!"
   end
+
+  def ask_letters_to_keep
+    puts "Please choose, which letters you want to keep!"
+    print ">>"
+    gets.chomp
+  end
 end

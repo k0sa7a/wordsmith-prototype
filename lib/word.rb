@@ -1,6 +1,5 @@
 class Word
-  attr_reader :word_arr, :score
-  attr_accessor :valid, :score, :word_try, :possible
+  attr_accessor :valid, :score, :word_try, :possible, :word_arr
 
   LETTERS_HASH = {"A"=>1,
     "B"=>3,
