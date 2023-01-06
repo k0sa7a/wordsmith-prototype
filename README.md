@@ -1,4 +1,5 @@
-#A small Ruby project for a word game
+# WordSmith
+This is a small Ruby project for a word game
 
 The aim is to write the longest possible valid English word with the letters provided.
 
