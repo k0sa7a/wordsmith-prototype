@@ -16,7 +16,7 @@ class View
   end
 
   def reply_impossible(word, letters_arr)
-    puts "Sorry! The word '#{word.upcase}' cannot be written with the letters: #{letters_arr}."
+    puts "Sorry! The word '#{word.upcase}' cannot be written with the letters: #{letters_arr.join(', ')}."
     puts "YOUR SCORE IS: 0"
   end
 
